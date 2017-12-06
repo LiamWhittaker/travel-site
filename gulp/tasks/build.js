@@ -17,11 +17,11 @@ gulp.task('previewDist', function() {
   });
 });
 
-gulp.task('deleteDistFolder', function() {
+gulp.task('deleteDistFolder', ['icons'], function() {
   return del('./docs');
 });
 
-gulp.task('copyGeneralFiles', ['deleteDistFolder', 'icons'], function() {
+gulp.task('copyGeneralFiles', ['deleteDistFolder'], function() {
   var pathsToCopy = [
     './app/**/*',
     '!./app/index.html',
